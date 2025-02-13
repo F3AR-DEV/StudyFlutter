@@ -26,16 +26,21 @@ class Home extends StatelessWidget {
         decoration: const BoxDecoration(color: Colors.red),
         child: Container(
           padding: EdgeInsets.all(10),
-          child: Row(
+          child: Column(
             children: [
-              CircleAvatar(
-                child: Text('J'),
+              const Row(
+                children: [
+                  CircleAvatar(
+                    child: Text('J'),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    'data',
+                    style: TextStyle(color: Colors.blueAccent, fontSize: 20),
+                  ),
+                ],
               ),
-              SizedBox(width: 10),
-              Text(
-                'data',
-                style: TextStyle(color: Colors.blueAccent, fontSize: 20),
-              )
+              Text('Segundo elemento del colum')
             ],
           ),
         ),
