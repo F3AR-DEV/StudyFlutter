@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/constants/colors.dart';
 import 'package:todo_app/model/todo.dart';
 
 class ToDoItem extends StatelessWidget {
@@ -33,7 +32,7 @@ class ToDoItem extends StatelessWidget {
           todo.todoText!,
           style: TextStyle(
             fontSize: 16,
-            color: tdBlack,
+            color: Colors.black,
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
@@ -42,7 +41,7 @@ class ToDoItem extends StatelessWidget {
           height: 35,
           width: 35,
           decoration: BoxDecoration(
-            color: tdRed,
+            color: Colors.red,
             borderRadius: BorderRadius.circular(5),
           ),
           child: IconButton(

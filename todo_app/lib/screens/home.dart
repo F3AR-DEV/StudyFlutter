@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/constants/colors.dart';
 import 'package:todo_app/model/todo.dart';
+import 'package:todo_app/widgets/build_app_bar.dart';
+import 'package:todo_app/widgets/searchBox.dart';
 import 'package:todo_app/widgets/todo_item.dart';
 
 class Home extends StatefulWidget {
@@ -24,8 +25,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: tdBGColor,
-      appBar: _buildAppBar(),
+      backgroundColor: Colors.white,
+      appBar: BuildAppBar(),
       body: Stack(
         children: [
           Container(
@@ -45,7 +46,7 @@ class _HomeState extends State<Home> {
                           bottom: 20,
                         ),
                         child: Text(
-                          'All ToDos',
+                          'TAREAS',
                           style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
@@ -92,7 +93,7 @@ class _HomeState extends State<Home> {
                   ),
                   child: TextField(
                     controller: _todoController,
-                    decoration: InputDecoration(hintText: 'Add a new todo item', border: InputBorder.none),
+                    decoration: InputDecoration(hintText: 'Agrega una nueva tarea', border: InputBorder.none),
                   ),
                 ),
               ),
@@ -143,60 +144,5 @@ class _HomeState extends State<Home> {
       ));
     });
     _todoController.clear();
-  }
-
-  void _runFilter(String enteredKeyword) {
-    List<ToDo> results = [];
-    if (enteredKeyword.isEmpty) {
-      results = todosList;
-    } else {
-      results = todosList.where((item) => item.todoText!.toLowerCase().contains(enteredKeyword.toLowerCase())).toList();
-    }
-
-    setState(() {
-      _foundToDo = results;
-    });
-  }
-
-  Widget searchBox() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: TextField(
-        onChanged: (value) => _runFilter(value),
-        decoration: InputDecoration(
-          prefixIcon: Icon(
-            Icons.search,
-            color: tdBlack,
-            size: 20,
-          ),
-          prefixIconConstraints: BoxConstraints(
-            maxHeight: 20,
-            minWidth: 25,
-          ),
-          border: InputBorder.none,
-          hintText: 'Buscar',
-          hintStyle: TextStyle(color: Colors.grey),
-        ),
-      ),
-    );
-  }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-        backgroundColor: Colors.blue,
-        elevation: 0,
-        title: Center(
-          child: Text(
-            'TO DO LIST',
-            style: TextStyle(
-              color: Colors.white, // Cambia este valor al color que desees
-              fontSize: 24, // También puedes ajustar el tamaño de la fuente si lo deseas
-            ),
-          ),
-        ));
   }
 }
