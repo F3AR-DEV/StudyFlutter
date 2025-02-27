@@ -6,7 +6,7 @@ class ToDo {
   ToDo({
     required this.id,
     required this.todoText,
-    this.isDone = false,
+    required this.isDone,
   });
 
   static List<ToDo> todoList() {
