@@ -10,7 +10,6 @@ class ToDoProvider extends ChangeNotifier {
   }
 
   List<ToDo> get foundToDo => _foundToDo;
-
   void handleToDoChange(ToDo todo) {
     todo.isDone = !todo.isDone;
     notifyListeners();
@@ -21,11 +20,8 @@ class ToDoProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addToDoItem(String toDo) {
-    todosList.add(ToDo(
-      id: DateTime.now().millisecondsSinceEpoch.toString(),
-      todoText: toDo,
-    ));
+  void addToDoItem(String toDo, bool isDone) {
+    todosList.add(ToDo(id: DateTime.now().millisecondsSinceEpoch.toString(), todoText: toDo, isDone: isDone));
     notifyListeners();
   }
 

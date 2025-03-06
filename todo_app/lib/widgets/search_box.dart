@@ -9,7 +9,7 @@ Widget searchBox() {
       borderRadius: BorderRadius.circular(20),
     ),
     child: TextField(
-      onChanged: (value) => _runFilter(value),
+      //onChanged: (value) => _runFilter(value),
       decoration: InputDecoration(
         prefixIcon: Icon(
           Icons.search,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/model/todo.dart';
 import 'package:todo_app/widgets/build_app_bar.dart';
-import 'package:todo_app/widgets/searchBox.dart';
+import 'package:todo_app/widgets/search_box.dart';
 import 'package:todo_app/widgets/todo_item.dart';
 
 class Home extends StatefulWidget {
@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    _addToDoItem(_todoController.text);
+                    //_addToDoItem(_todoController.text);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
@@ -136,11 +136,12 @@ class _HomeState extends State<Home> {
     });
   }
 
-  void _addToDoItem(String toDo) {
+  void _addToDoItem(String toDo, bool isDone) {
     setState(() {
       todosList.add(ToDo(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
         todoText: toDo,
+        isDone: isDone,
       ));
     });
     _todoController.clear();
