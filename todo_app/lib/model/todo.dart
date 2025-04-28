@@ -11,12 +11,11 @@ class ToDo {
 
   static List<ToDo> todoList() {
     return [
-      ToDo(id: '01', todoText: 'Morning Excercise', isDone: true),
-      ToDo(id: '02', todoText: 'Buy Groceries', isDone: true),
-      ToDo(id: '03', todoText: 'Check Emails', isDone: false),
-      ToDo(id: '04', todoText: 'Team Meeting', isDone: false),
-      ToDo(id: '05', todoText: 'Work on mobile apps for 2 hour', isDone: false),
-      ToDo(id: '06', todoText: 'Dinner with Jenny', isDone: false),
+      ToDo(id: '01', todoText: 'Desayunar', isDone: true),
+      ToDo(id: '02', todoText: 'Lavarse los dientes', isDone: true),
+      ToDo(id: '03', todoText: 'Bañarse', isDone: false),
+      ToDo(id: '04', todoText: 'Vestirse', isDone: false),
+      ToDo(id: '05', todoText: 'Salir', isDone: false),
     ];
   }
 }
