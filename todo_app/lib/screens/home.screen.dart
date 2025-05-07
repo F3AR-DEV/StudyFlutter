@@ -12,6 +12,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final todoProvider = Provider.of<ToDoProvider>(context);
+
     TextEditingController textController = TextEditingController();
 
     return Scaffold(

@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ToDo App',
-        home: const Home(),
+        home: const Home(), //* Init home
       ),
     );
   }
